@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>オセロゲーム</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="./src/style.css">
+    <audio id="audio1" src="./audios/ビーム砲1.mp3"></audio>
+    <audio id="audio2" src="./audios/youwin.mp3"></audio>
+    <audio id="audio3" src="./audios/gameover.mp3"></audio>
+</head>
+<body>
+    <p>
+     <span id="current-turn">あなたの番です</span>
+     <button id="pass">パスする</button>
+    </p>
+    <div id="stage" class="stage"></div>
+    <div id="square-template" class="square">
+        <div class="stone"></div>
+    </div>
+    <script src="./src/index.js"></script>  
+</body>
+</html>

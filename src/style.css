@@ -1,0 +1,71 @@
+* { /*要素の幅と高さにpaddingとborderを含める*/
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    text-align: center; /*p*タグを中央寄せ*/
+    background-color: #bcf0bc;
+}
+
+.stage {
+    display: flex;  /*<div id="stage" class="stage"></div>*の中の要素を*/
+    flex-wrap: wrap; /*折り返して表示する*/
+    margin: 0 auto;  /*中央寄せ*/
+    width: 644px;  /*　84(一番左)＋80(それ以外の四角)X7(個)*/
+    height: 644px;
+}
+
+.square {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: rgb(6, 136, 26);
+}
+
+.square:nth-child(-n + 8) {   /*一番上の四角形8個*/
+    border-width: 4px 4px 4px 0; /*左以外の枠*/
+    height: 84px; 
+}
+
+.square:nth-child(8n + 1) {   /*一番左の四角形8個*/
+    border-width: 0 4px 4px 4px; /*上以外の枠*/
+    width: 84px; 
+}
+
+.square:first-child {   /*先頭の四角形(左隅)*/
+    border-width: 4px; /*上下左右*/
+    width: 84px;
+    height: 84px; 
+}
+
+.stone {
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    background-size: contain;  /*背景画像全体が見えるように*/
+    background-repeat: no-repeat; /*背景全体の繰り返しをしない*/
+    background-position: centar; /*背景全体を中央にする*/
+}
+
+.stone[data-state="0"] {
+    display: none;
+}
+
+.stone[data-state="1"] {
+    background-color: blue;
+    background-image: url('../images/MIG.png');
+}
+
+.stone[data-state="2"] {
+    background-color: red;
+    background-image: url('../images/DESG.png');
+}
+                                                        
+
+#square-template {
+    display: none;
+}
